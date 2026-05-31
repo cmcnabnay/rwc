@@ -74,7 +74,6 @@ function Flag({ code, size=16 }) {
   );
 }
 
-import { useState } from "react";
 
 // ── Tries stats (from RWC data) ───────────────────────────────────────────────
 const TRIES_STATS = [
