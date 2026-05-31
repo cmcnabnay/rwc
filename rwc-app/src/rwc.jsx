@@ -27,25 +27,15 @@ const FLAG_DATA = {
   "zw": "data:image/png;base64,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",
 };
 
-function Flag({ code, size=16 }) {
-  if (!code || !FLAG_DATA[code]) return (
-    <span style={{display:"inline-block",width:size,height:Math.round(size*0.75),background:"rgba(255,255,255,.1)",borderRadius:1,flexShrink:0}}/>
-  );
-  return (
-    <img
-      src={FLAG_DATA[code]}
-      alt={code}
-      style={{
-        display:"inline-block",
-        verticalAlign:"middle",
-        borderRadius:1,
-        flexShrink:0,
-        width:size,
-        height:"auto",
-      }}
-    />
-  );
-}
+
+const FLAG_CODES = {
+  "New Zealand":"nz","Australia":"au","Chile":"cl","Hong Kong":"hk",
+  "South Africa":"za","Italy":"it","Georgia":"ge","Romania":"ro",
+  "Argentina":"ar","Fiji":"fj","Spain":"es","Canada":"ca",
+  "Ireland":"ie","Scotland":"gb-sct","Uruguay":"uy","Portugal":"pt",
+  "France":"fr","Japan":"jp","Samoa":"ws","United States":"us",
+  "England":"gb-eng","Wales":"gb-wls","Tonga":"to","Zimbabwe":"zw",
+};
 
 const WR = {
   "South Africa":93.94,"New Zealand":90.33,"Ireland":89.07,"France":87.46,
@@ -64,14 +54,6 @@ const POOLS_RAW = {
   E:[{name:"France"},{name:"Japan"},{name:"Samoa"},{name:"United States"}],
   F:[{name:"England"},{name:"Wales"},{name:"Tonga"},{name:"Zimbabwe"}],
 };
-const FLAG_CODES = {
-  "New Zealand":"nz","Australia":"au","Chile":"cl","Hong Kong":"hk",
-  "South Africa":"za","Italy":"it","Georgia":"ge","Romania":"ro",
-  "Argentina":"ar","Fiji":"fj","Spain":"es","Canada":"ca",
-  "Ireland":"ie","Scotland":"gb-sct","Uruguay":"uy","Portugal":"pt",
-  "France":"fr","Japan":"jp","Samoa":"ws","United States":"us",
-  "England":"gb-eng","Wales":"gb-wls","Tonga":"to","Zimbabwe":"zw",
-};
 Object.values(POOLS_RAW).forEach(pool =>
   pool.forEach(t => {
     t.rating = WR[t.name] ?? 60;
@@ -79,105 +61,284 @@ Object.values(POOLS_RAW).forEach(pool =>
   })
 );
 
-// Regression: Score = 47.10360736 + 1.02029684*TeamWR - 1.29942293*OppWR, σ=12.8655087
-const B0=47.10360736, B1=1.02029684, B2=-1.29942293, SIG=12.8655087;
+function Flag({ code, size=16 }) {
+  if (!code || !FLAG_DATA[code]) return (
+    <span style={{display:"inline-block",width:size,height:Math.round(size*0.75),background:"rgba(255,255,255,.1)",borderRadius:1,flexShrink:0}}/>
+  );
+  return (
+    <img
+      src={FLAG_DATA[code]}
+      alt={code}
+      style={{display:"inline-block",verticalAlign:"middle",borderRadius:1,flexShrink:0,width:size,height:"auto"}}
+    />
+  );
+}
 
-function predScore(r, o) { return B0 + B1*r + B2*o; }
+import { useState } from "react";
 
+// ── Tries stats (from RWC data) ───────────────────────────────────────────────
+const TRIES_STATS = [
+  { t:0,  avg:7.193181818,  sd:5.801367305 },
+  { t:1,  avg:12.71942446,  sd:5.238249992 },
+  { t:2,  avg:19.32407407,  sd:5.245507255 },
+  { t:3,  avg:25.72131148,  sd:5.84536007  },
+  { t:4,  avg:33.25,        sd:5.02369386  },
+  { t:5,  avg:38.25806452,  sd:4.428410783 },
+  { t:6,  avg:42.65217391,  sd:4.369943743 },
+  { t:7,  avg:48.13043478,  sd:4.057246312 },
+  { t:8,  avg:57.5,         sd:2.598076211 },
+  { t:9,  avg:61.41666667,  sd:3.522743565 },
+  { t:10, avg:64.88888889,  sd:2.960647243 },
+  { t:11, avg:70.66666667,  sd:3.018461713 },
+  { t:12, avg:80.625,       sd:4.525966748 },
+  { t:13, avg:87.83333333,  sd:3.077697552 },
+];
+
+// ── Penalties stats (from RWC data) ──────────────────────────────────────────
+const PEN_STATS = [
+  { p:0, avg:4.691176471, sd:4.512261889 },
+  { p:1, avg:3.310810811, sd:3.152607084 },
+  { p:2, avg:2.65,        sd:2.503497458 },
+  { p:3, avg:2.129870130, sd:1.982724987 },
+  { p:4, avg:2.192982456, sd:1.740897744 },
+  { p:5, avg:1.514285714, sd:1.204073834 },
+  { p:6, avg:2.384615385, sd:2.058317906 },
+  { p:7, avg:1.333333333, sd:0.471404521 },
+];
+
+// ── Normal PDF ────────────────────────────────────────────────────────────────
+function normPDF(x, mu, sigma) {
+  if (sigma <= 0) return 0;
+  return Math.exp(-0.5 * ((x - mu) / sigma) ** 2) / (sigma * Math.sqrt(2 * Math.PI));
+}
+
+// ── Normal CDF Φ(z) ──────────────────────────────────────────────────────────
 function normCDF(z) {
   const t = 1 / (1 + 0.2315419 * Math.abs(z));
   const d = 0.3989423 * Math.exp(-z * z / 2);
-  const poly = d * t * (0.3193815 + t * (-0.3565638 + t * (1.7814779 + t * (-1.8212560 + t * 1.3302744))));
-  return z >= 0 ? 1 - poly : poly;
+  const p = d * t * (0.3193815 + t * (-0.3565638 + t * (1.7814779 + t * (-1.8212560 + t * 1.3302744))));
+  return z >= 0 ? 1 - p : p;
 }
 
+// P(A wins) = 1 - NORMDIST(0, predA-predB, σ, TRUE)
+const B0=48.84847, B1=1.052553, B2=-1.34855, SIG=13.15048462;
+function predScore(r, o) { return B0 + B1*r + B2*o; }
 function winPct(rA, rB) {
-  const diff = predScore(rA, rB) - predScore(rB, rA);
+  const diff = predScore(rA,rB) - predScore(rB,rA);
   return 1 - normCDF(-diff / SIG);
 }
 
-function sampleNormal() {
-  let u = 0, v = 0;
-  while (!u) u = Math.random();
-  while (!v) v = Math.random();
-  return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+// Box-Muller normal sample
+function randn() {
+  let u=0,v=0;
+  while(!u) u=Math.random();
+  while(!v) v=Math.random();
+  return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);
 }
 
+// Snap to valid rugby score (no 1,2,4)
 function snapScore(x) {
   const s = Math.max(0, Math.round(x));
-  if (s === 1 || s === 2) return 0;
-  if (s === 4) return 3;
+  if (s===1||s===2) return 0;
+  if (s===4) return 3;
   return s;
 }
 
-function simPoolMatch(A, B) {
-  const sA = snapScore(predScore(A.rating, B.rating) + sampleNormal() * SIG);
-  const sB = snapScore(predScore(B.rating, A.rating) + sampleNormal() * SIG);
-  const isDraw = sA === sB;
-  const tA = Math.floor(sA * 0.55 / 7);
-  const tB = Math.floor(sB * 0.55 / 7);
-  const bA = tA >= 4 ? 1 : 0;
-  const bB = tB >= 4 ? 1 : 0;
-  const lbA = !isDraw && sA < sB && (sB - sA) <= 7 ? 1 : 0;
-  const lbB = !isDraw && sB < sA && (sA - sB) <= 7 ? 1 : 0;
-  return { sA, sB, isDraw, winner: isDraw ? null : sA > sB ? A : B, bA, bB, lbA, lbB, tA, tB, wp: winPct(A.rating, B.rating) };
+// ── Check if penalty count p is feasible for score S and tries t ──────────────
+// Need: exists integer c in [0,t] such that t*5 + c*2 + p*3 = S
+// => c = (S - 5t - 3p) / 2, must be integer in [0,t]
+function isPenPossible(S, t, p) {
+  const rem = S - 5*t - 3*p;
+  if (rem < 0) return false;
+  if (rem % 2 !== 0) return false;
+  const c = rem / 2;
+  return c >= 0 && c <= t;
 }
 
-function simKOMatch(A, B) {
+// ── Sample tries from score using NORMDIST probabilities ─────────────────────
+function sampleTries(score) {
+  // Check if each try count is possible (any conversion count gives integer pens >= 0)
+  // tries t is possible if exists c in [0,t] and p>=0 s.t. 5t+2c+3p=score
+  const probs = [];
+  for (const { t, avg, sd } of TRIES_STATS) {
+    // Check feasibility: any p>=0 works?
+    let feasible = false;
+    for (let c = 0; c <= t; c++) {
+      const rem = score - 5*t - 2*c;
+      if (rem >= 0 && rem % 3 === 0) { feasible = true; break; }
+    }
+    const prob = feasible ? normPDF(score, avg, sd) : 0;
+    probs.push({ t, prob });
+  }
+  const total = probs.reduce((s, x) => s + x.prob, 0);
+  if (total === 0) {
+    // Fallback: pick closest avg
+    let best = 0, bestD = Infinity;
+    TRIES_STATS.forEach(({ t, avg }) => { const d = Math.abs(avg - score); if (d < bestD) { bestD=d; best=t; }});
+    return best;
+  }
+  // Sample
+  let r = Math.random() * total, cum = 0;
+  for (const { t, prob } of probs) {
+    cum += prob;
+    if (r <= cum) return t;
+  }
+  return probs[probs.length-1].t;
+}
+
+// ── Sample penalties from score and tries ────────────────────────────────────
+function samplePenalties(score, tries) {
+  const probs = [];
+  for (const { p, avg, sd } of PEN_STATS) {
+    const feasible = isPenPossible(score, tries, p);
+    const prob = feasible ? normPDF(tries, avg, sd) : 0;
+    probs.push({ p, prob });
+  }
+  const total = probs.reduce((s, x) => s + x.prob, 0);
+  if (total === 0) {
+    // Fallback: find any feasible penalty count
+    for (let p = 0; p <= 8; p++) {
+      if (isPenPossible(score, tries, p)) return p;
+    }
+    return 0;
+  }
+  let r = Math.random() * total, cum = 0;
+  for (const { p, prob } of probs) {
+    cum += prob;
+    if (r <= cum) return p;
+  }
+  return probs[probs.length-1].p;
+}
+
+// ── Work out conversions from score, tries, penalties ────────────────────────
+// score = 5*tries + 2*cons + 3*pens => cons = (score - 5*tries - 3*pens) / 2
+function calcConversions(score, tries, pens) {
+  const rem = score - 5*tries - 3*pens;
+  if (rem < 0 || rem % 2 !== 0) return 0;
+  return Math.min(rem / 2, tries);
+}
+
+// ── Generate match timeline ───────────────────────────────────────────────────
+function generateTimeline(tries, conversions, penalties) {
+  // Random try times, sorted
+  const tryTimes = Array.from({length: tries}, () => Math.floor(Math.random()*79)+1).sort((a,b)=>a-b);
+  // Conversions: first `conversions` tries are converted (random which ones)
+  const convMask = Array(tries).fill(false);
+  // Randomly assign which tries are converted
+  const idxs = Array.from({length:tries},(_,i)=>i);
+  for (let i = idxs.length-1; i > 0; i--) {
+    const j = Math.floor(Math.random()*(i+1));
+    [idxs[i],idxs[j]] = [idxs[j],idxs[i]];
+  }
+  idxs.slice(0, conversions).forEach(i => { convMask[i] = true; });
+
+  // Penalty times (independent)
+  const penTimes = Array.from({length:penalties}, () => Math.floor(Math.random()*79)+1).sort((a,b)=>a-b);
+
+  return { tryTimes, convMask, penTimes };
+}
+
+// ── Full match simulation ─────────────────────────────────────────────────────
+function simFullMatch(A, B, isKO) {
   let sA, sB;
-  do {
-    sA = snapScore(predScore(A.rating, B.rating) + sampleNormal() * SIG);
-    sB = snapScore(predScore(B.rating, A.rating) + sampleNormal() * SIG);
-  } while (sA === sB);
-  const tA = Math.floor(sA * 0.55 / 7);
-  const tB = Math.floor(sB * 0.55 / 7);
+  if (isKO) {
+    do {
+      sA = snapScore(predScore(A.rating,B.rating) + randn()*SIG);
+      sB = snapScore(predScore(B.rating,A.rating) + randn()*SIG);
+    } while (sA === sB);
+  } else {
+    sA = snapScore(predScore(A.rating,B.rating) + randn()*SIG);
+    sB = snapScore(predScore(B.rating,A.rating) + randn()*SIG);
+  }
+
+  // Decompose scores into tries/pens/cons
+  const triesA = sampleTries(sA);
+  const pensA  = samplePenalties(sA, triesA);
+  const consA  = calcConversions(sA, triesA, pensA);
+
+  const triesB = sampleTries(sB);
+  const pensB  = samplePenalties(sB, triesB);
+  const consB  = calcConversions(sB, triesB, pensB);
+
+  const tlA = generateTimeline(triesA, consA, pensA);
+  const tlB = generateTimeline(triesB, consB, pensB);
+
+  const isDraw = sA === sB;
   const aWins = sA > sB;
+
+  // Bonus points
+  const tryBonusA = triesA >= 4 ? 1 : 0;
+  const tryBonusB = triesB >= 4 ? 1 : 0;
+  const losingBonusA = !isDraw && !aWins && (sB - sA) <= 7 ? 1 : 0;
+  const losingBonusB = !isDraw &&  aWins && (sA - sB) <= 7 ? 1 : 0;
+
   return {
-    sA, sB, isDraw: false,
-    winner: aWins ? A : B,
-    loser: aWins ? B : A,
-    bA: tA >= 4 ? 1 : 0, bB: tB >= 4 ? 1 : 0,
-    lbA: !aWins && (sB - sA) <= 7 ? 1 : 0,
-    lbB: aWins && (sA - sB) <= 7 ? 1 : 0,
-    tA, tB, wp: winPct(A.rating, B.rating),
+    scoreA:sA, scoreB:sB, isDraw,
+    winner: isDraw ? null : aWins ? A : B,
+    loser:  isDraw ? null : aWins ? B : A,
+    triesA, pensA, consA, tlA,
+    triesB, pensB, consB, tlB,
+    tryBonusA, tryBonusB,
+    losingBonusA, losingBonusB,
+    wp: winPct(A.rating, B.rating),
   };
 }
 
 function makeKO(a, b) {
-  if (!a || !b) return null;
-  const r = simKOMatch(a, b);
-  return { ...r, a, b, scoreA: r.sA, scoreB: r.sB };
+  if (!a||!b) return null;
+  const r = simFullMatch(a, b, true);
+  return { ...r, a, b };
 }
 
+// ── Pool simulation ───────────────────────────────────────────────────────────
 function simPool(teams) {
-  const res = teams.map(t => ({ ...t, played:0, wins:0, draws:0, losses:0, pf:0, pa:0, tf:0, ta:0, bonus:0, pts:0 }));
+  const res = teams.map(t => ({
+    ...t, played:0, wins:0, draws:0, losses:0,
+    pf:0, pa:0, tf:0, ta:0, tryBonus:0, losingBonus:0, pts:0
+  }));
   const matches = [];
+
   for (let i = 0; i < teams.length; i++) {
-    for (let j = i + 1; j < teams.length; j++) {
-      const m = simPoolMatch(res[i], res[j]);
-      matches.push({ a: teams[i].name, afC: teams[i].fc, b: teams[j].name, bfC: teams[j].fc, scoreA: m.sA, scoreB: m.sB, isDraw: m.isDraw, wp: m.wp });
-      const ri = res.findIndex(r => r.name === teams[i].name);
-      const rj = res.findIndex(r => r.name === teams[j].name);
+    for (let j = i+1; j < teams.length; j++) {
+      const m = simFullMatch(res[i], res[j], false);
+      const ri = res.findIndex(r=>r.name===teams[i].name);
+      const rj = res.findIndex(r=>r.name===teams[j].name);
+
+      matches.push({
+        a:teams[i].name, afC:teams[i].fc,
+        b:teams[j].name, bfC:teams[j].fc,
+        scoreA:m.scoreA, scoreB:m.scoreB, isDraw:m.isDraw,
+        triesA:m.triesA, pensA:m.pensA, consA:m.consA, tlA:m.tlA,
+        triesB:m.triesB, pensB:m.pensB, consB:m.consB, tlB:m.tlB,
+        tryBonusA:m.tryBonusA, tryBonusB:m.tryBonusB,
+        losingBonusA:m.losingBonusA, losingBonusB:m.losingBonusB,
+        wp:m.wp,
+        teamA: teams[i], teamB: teams[j],
+      });
+
       res[ri].played++; res[rj].played++;
-      res[ri].pf += m.sA; res[ri].pa += m.sB; res[ri].tf += m.tA; res[ri].ta += m.tB;
-      res[rj].pf += m.sB; res[rj].pa += m.sA; res[rj].tf += m.tB; res[rj].ta += m.tA;
+      res[ri].pf+=m.scoreA; res[ri].pa+=m.scoreB; res[ri].tf+=m.triesA; res[ri].ta+=m.triesB;
+      res[rj].pf+=m.scoreB; res[rj].pa+=m.scoreA; res[rj].tf+=m.triesB; res[rj].ta+=m.triesA;
+      res[ri].tryBonus+=m.tryBonusA; res[rj].tryBonus+=m.tryBonusB;
+      res[ri].losingBonus+=m.losingBonusA; res[rj].losingBonus+=m.losingBonusB;
+
       if (m.isDraw) {
-        res[ri].draws++; res[ri].pts += 2 + m.bA; res[ri].bonus += m.bA;
-        res[rj].draws++; res[rj].pts += 2 + m.bB; res[rj].bonus += m.bB;
-      } else if (m.sA > m.sB) {
-        res[ri].wins++; res[ri].pts += 4 + m.bA + m.lbA; res[ri].bonus += m.bA + m.lbA;
-        res[rj].losses++; res[rj].pts += m.bB + m.lbB; res[rj].bonus += m.bB + m.lbB;
+        res[ri].draws++; res[ri].pts+=2+m.tryBonusA;
+        res[rj].draws++; res[rj].pts+=2+m.tryBonusB;
+      } else if (m.scoreA>m.scoreB) {
+        res[ri].wins++; res[ri].pts+=4+m.tryBonusA+m.losingBonusA;
+        res[rj].losses++; res[rj].pts+=m.tryBonusB+m.losingBonusB;
       } else {
-        res[rj].wins++; res[rj].pts += 4 + m.bB + m.lbB; res[rj].bonus += m.bB + m.lbB;
-        res[ri].losses++; res[ri].pts += m.bA + m.lbA; res[ri].bonus += m.bA + m.lbA;
+        res[rj].wins++; res[rj].pts+=4+m.tryBonusB+m.losingBonusB;
+        res[ri].losses++; res[ri].pts+=m.tryBonusA+m.losingBonusA;
       }
     }
   }
-  res.sort((a, b) => b.pts - a.pts || (b.pf - b.pa) - (a.pf - a.pa) || b.pf - a.pf);
-  return { standings: res, matches };
+  res.sort((a,b)=>b.pts-a.pts||(b.pf-b.pa)-(a.pf-a.pa)||b.pf-a.pf);
+  return { standings:res, matches };
 }
 
-const TPT = {
+const TPT={
   "ABCD":["C3","D3","A3","B3"],"ABCE":["C3","E3","A3","B3"],"ABCF":["C3","F3","A3","B3"],
   "ABDE":["E3","D3","A3","B3"],"ABDF":["F3","D3","A3","B3"],"ABEF":["E3","F3","A3","B3"],
   "ACDE":["C3","D3","A3","E3"],"ACDF":["C3","D3","A3","F3"],"ACEF":["C3","E3","A3","F3"],
@@ -185,171 +346,204 @@ const TPT = {
   "BCEF":["C3","E3","F3","B3"],"BDEF":["E3","D3","F3","B3"],"CDEF":["C3","D3","E3","F3"],
 };
 
-const POOL_LETTERS = ["A","B","C","D","E","F"];
-const fmtPct = prob => `${Math.round(prob * 100)}%`;
+const POOL_LETTERS=["A","B","C","D","E","F"];
+const fmtPct=p=>`${Math.round(p*100)}%`;
 
-// ── Bracket geometry constants ────────────────────────────────────────────────
-const MATCH_H = 62;
-const R16_GAP = 8;
-const PAIR_GAP = 20;
-const COL_W = 178;
-const COL_GAP = 18;
-const HDR_H = 26;
+// ── Timeline display ──────────────────────────────────────────────────────────
+function Timeline({ name, fc, score, tries, pens, cons, tl }) {
+  const { tryTimes, convMask, penTimes } = tl;
+  const madeConTimes = tryTimes.filter((_,i)=>convMask[i]).map(t=>t+1);
 
-function getMid(top) { return top + MATCH_H / 2; }
-function getCentredTop(midA, midB) { return (midA + midB) / 2 - MATCH_H / 2; }
-
-function WinBar({ prob }) {
   return (
-    <div style={{ display:"flex", alignItems:"center", gap:4, marginTop:3 }}>
-      <div style={{ flex:1, height:3, background:"rgba(255,255,255,.07)", borderRadius:2, overflow:"hidden" }}>
-        <div style={{ width: fmtPct(prob), height:"100%", background:`hsl(${40 + prob*80},75%,52%)` }} />
+    <div style={{flex:1,minWidth:0,padding:"10px 12px",background:"rgba(255,255,255,.03)",border:"1px solid rgba(255,255,255,.08)",borderRadius:2}}>
+      <div style={{display:"flex",alignItems:"center",gap:6,marginBottom:8}}>
+        <Flag code={fc} size={16}/>
+        <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:16,letterSpacing:1,color:"#C9A227"}}>{name}</span>
+        <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:22,color:"#f0e6c8",marginLeft:"auto"}}>{score}</span>
       </div>
-      <span style={{ fontSize:10, color:"rgba(232,224,208,.4)", minWidth:28 }}>{fmtPct(prob)}</span>
+      {tries > 0 && (
+        <div style={{marginBottom:5}}>
+          <span style={{color:"rgba(232,224,208,.5)",fontSize:11,fontWeight:700}}>TRY: </span>
+          <span style={{fontSize:11,color:"#e8e0d0"}}>
+            {tryTimes.map((t,i)=>(
+              <span key={i}>{t}' <span style={{color:convMask[i]?"#4ade80":"#f87171"}}>{convMask[i]?"c":"m"}</span>{i<tryTimes.length-1?"  ":""}</span>
+            ))}
+          </span>
+        </div>
+      )}
+      {cons > 0 && (
+        <div style={{marginBottom:5}}>
+          <span style={{color:"rgba(232,224,208,.5)",fontSize:11,fontWeight:700}}>CON: </span>
+          <span style={{fontSize:11,color:"#e8e0d0"}}>({cons}/{tries}) {madeConTimes.join("'  ")}'{madeConTimes.length>0?"":""}</span>
+        </div>
+      )}
+      {pens > 0 && (
+        <div>
+          <span style={{color:"rgba(232,224,208,.5)",fontSize:11,fontWeight:700}}>PEN: </span>
+          <span style={{fontSize:11,color:"#e8e0d0"}}>({pens}/{pens}) {penTimes.join("'  ")}'</span>
+        </div>
+      )}
+      {tries===0&&pens===0&&<div style={{fontSize:11,color:"rgba(232,224,208,.35)",fontStyle:"italic"}}>No score</div>}
     </div>
   );
 }
 
-function MatchCard({ m, top, left, label, gold, bronze }) {
-  const wProb = m.a && m.b ? winPct(m.a.rating, m.b.rating) : null;
-  const borderColor = gold ? "rgba(201,162,39,.65)" : bronze ? "rgba(160,120,60,.45)" : "rgba(255,255,255,.1)";
-  const rows = [
-    { team: m.a, score: m.scoreA, myProb: wProb },
-    { team: m.b, score: m.scoreB, myProb: wProb !== null ? 1 - wProb : null },
-  ];
+// ── Match result row (clickable to expand timeline) ───────────────────────────
+function MatchRow({ m }) {
+  const [open, setOpen] = useState(false);
   return (
-    <div style={{ position:"absolute", top, left, width:COL_W }}>
-      <div style={{ border:`1px solid ${borderColor}`, boxShadow: gold ? "0 0 18px rgba(201,162,39,.18)" : "none", overflow:"hidden", borderRadius:2 }}>
-        {rows.map(({ team, score, myProb }, idx) => {
-          const isWinner = m.winner && team && m.winner.name === team.name;
-          return (
-            <div key={idx} style={{
-              padding:"5px 8px",
-              background: isWinner ? "rgba(201,162,39,.12)" : "transparent",
-              borderBottom: idx === 0 ? "1px solid rgba(255,255,255,.06)" : "none",
-            }}>
-              <div style={{
-                display:"flex", alignItems:"center", gap:5,
-                fontSize:12, fontWeight:600, fontFamily:"'Barlow Condensed',sans-serif",
-                color: !team ? "rgba(232,224,208,.25)" : isWinner ? "#C9A227" : "#e8e0d0",
-                fontStyle: !team ? "italic" : "normal",
-              }}>
-                {!team ? (
-                  <span style={{ flex:1 }}>TBD</span>
-                ) : (
-                  <>
-                    <Flag code={team.fc} size={15} />
-                    <span style={{ flex:1, overflow:"hidden", textOverflow:"ellipsis", whiteSpace:"nowrap" }}>{team.name}</span>
-                    {myProb !== null && !m.winner && <span style={{ fontSize:10, color:"rgba(232,224,208,.35)" }}>{fmtPct(myProb)}</span>}
-                    {m.winner && <span style={{ fontFamily:"'Bebas Neue',sans-serif", fontSize:15, marginLeft:4 }}>{score}</span>}
-                  </>
-                )}
-              </div>
-              {myProb !== null && !m.winner && (
-                <div style={{ height:2, background:"rgba(255,255,255,.06)", borderRadius:1, overflow:"hidden", marginTop:3 }}>
-                  <div style={{ width: fmtPct(myProb), height:"100%", background:`hsl(${40 + myProb*80},72%,50%)` }} />
-                </div>
-              )}
-            </div>
-          );
-        })}
+    <div style={{marginBottom:6}}>
+      <div
+        onClick={()=>setOpen(o=>!o)}
+        style={{display:"flex",alignItems:"center",padding:"5px 8px",background:"rgba(255,255,255,.025)",cursor:"pointer",border:"1px solid rgba(255,255,255,.06)",borderRadius:2,gap:6,userSelect:"none"}}
+      >
+        <Flag code={m.afC} size={14}/>
+        <span style={{flex:1,fontSize:11,fontFamily:"'Barlow Condensed',sans-serif",fontWeight:600}}>{m.a}</span>
+        <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:15,color:m.isDraw?"#7bc8d4":"#C9A227",minWidth:60,textAlign:"center"}}>
+          {m.scoreA}–{m.scoreB}
+          {m.isDraw&&<span style={{fontFamily:"'Barlow Condensed',sans-serif",fontSize:8,fontWeight:700,color:"#7bc8d4",border:"1px solid rgba(120,180,200,.3)",padding:"0 3px",borderRadius:2,marginLeft:3,verticalAlign:"middle"}}>DRAW</span>}
+        </span>
+        <span style={{flex:1,textAlign:"right",fontSize:11,fontFamily:"'Barlow Condensed',sans-serif",fontWeight:600}}>{m.b}</span>
+        <Flag code={m.bfC} size={14}/>
+        <span style={{fontSize:10,color:"rgba(201,162,39,.5)",marginLeft:4}}>{open?"▲":"▼"}</span>
       </div>
-      {label && <div style={{ fontSize:9, color:"rgba(232,224,208,.22)", textAlign:"center", marginTop:2, fontFamily:"'Barlow Condensed',sans-serif" }}>{label}</div>}
+      {/* Pre-match bar */}
+      <div style={{display:"flex",alignItems:"center",padding:"2px 8px",gap:5,background:"rgba(255,255,255,.012)",borderLeft:"1px solid rgba(255,255,255,.06)",borderRight:"1px solid rgba(255,255,255,.06)",borderBottom:open?"none":"1px solid rgba(255,255,255,.06)"}}>
+        <div style={{flex:1,height:2,background:"rgba(255,255,255,.06)",borderRadius:1,overflow:"hidden"}}>
+          <div style={{width:fmtPct(m.wp),height:"100%",background:`hsl(${40+m.wp*80},70%,50%)`}}/>
+        </div>
+        <span style={{fontSize:9,color:"rgba(232,224,208,.28)",minWidth:70,textAlign:"right"}}>{fmtPct(m.wp)} pre-match</span>
+      </div>
+      {open && (
+        <div style={{display:"flex",gap:8,padding:"8px",background:"rgba(0,0,0,.2)",border:"1px solid rgba(255,255,255,.06)",borderTop:"none",borderRadius:"0 0 2px 2px"}}>
+          <Timeline name={m.a} fc={m.afC} score={m.scoreA} tries={m.triesA} pens={m.pensA} cons={m.consA} tl={m.tlA}/>
+          <Timeline name={m.b} fc={m.bfC} score={m.scoreB} tries={m.triesB} pens={m.pensB} cons={m.consB} tl={m.tlB}/>
+        </div>
+      )}
     </div>
+  );
+}
+
+// ── KO match card ─────────────────────────────────────────────────────────────
+const MATCH_H=62,R16G=8,PG=20,CW=182,CG=20,HDR=26;
+const getMid=t=>t+MATCH_H/2;
+const getCTop=(a,b)=>(a+b)/2-MATCH_H/2;
+
+function KOCard({ m, top, left, label, gold, bronze }) {
+  const [open, setOpen] = useState(false);
+  const wProb = m.a&&m.b ? winPct(m.a.rating,m.b.rating) : null;
+
+  return (
+    <>
+      <div style={{position:"absolute",top,left,width:CW,zIndex:open?10:1}}>
+        <div
+          onClick={()=>m.winner&&setOpen(o=>!o)}
+          style={{
+            border:`1px solid ${gold?"rgba(201,162,39,.65)":bronze?"rgba(160,120,60,.45)":"rgba(255,255,255,.1)"}`,
+            boxShadow:gold?"0 0 18px rgba(201,162,39,.18)":"none",
+            overflow:"hidden",borderRadius:2,
+            cursor:m.winner?"pointer":"default",
+          }}
+        >
+          {[{team:m.a,score:m.scoreA,myP:wProb},{team:m.b,score:m.scoreB,myP:wProb?1-wProb:null}].map(({team,score,myP},idx)=>{
+            const isWin=m.winner&&team&&m.winner.name===team.name;
+            return(
+              <div key={idx} style={{padding:"5px 8px",background:isWin?"rgba(201,162,39,.12)":"transparent",borderBottom:idx===0?"1px solid rgba(255,255,255,.06)":"none"}}>
+                <div style={{display:"flex",alignItems:"center",gap:5,fontSize:12,fontWeight:600,fontFamily:"'Barlow Condensed',sans-serif",color:!team?"rgba(232,224,208,.25)":isWin?"#C9A227":"#e8e0d0",fontStyle:!team?"italic":"normal"}}>
+                  {!team?<span style={{flex:1}}>TBD</span>:<>
+                    <Flag code={team.fc} size={15}/>
+                    <span style={{flex:1,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{team.name}</span>
+                    {myP!==null&&!m.winner&&<span style={{fontSize:10,color:"rgba(232,224,208,.35)"}}>{fmtPct(myP)}</span>}
+                    {m.winner&&<span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:15,marginLeft:4}}>{score}</span>}
+                  </>}
+                </div>
+                {myP!==null&&!m.winner&&<div style={{height:2,background:"rgba(255,255,255,.06)",borderRadius:1,overflow:"hidden",marginTop:3}}><div style={{width:fmtPct(myP),height:"100%",background:`hsl(${40+myP*80},72%,50%)`}}/></div>}
+              </div>
+            );
+          })}
+        </div>
+        {label&&<div style={{fontSize:9,color:"rgba(232,224,208,.22)",textAlign:"center",marginTop:2,fontFamily:"'Barlow Condensed',sans-serif"}}>{label} {m.winner?"· click to expand":""}</div>}
+      </div>
+      {/* Expanded timeline - positioned below */}
+      {open&&m.winner&&(
+        <div style={{position:"absolute",top:top+MATCH_H+14,left:Math.max(0,left-20),width:CW*2+CG,zIndex:20,background:"#0f0f18",border:"1px solid rgba(201,162,39,.3)",borderRadius:4,padding:10,boxShadow:"0 8px 32px rgba(0,0,0,.6)"}}>
+          <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:8}}>
+            <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:14,color:"rgba(232,224,208,.4)",letterSpacing:1}}>MATCH TIMELINE</span>
+            <button onClick={e=>{e.stopPropagation();setOpen(false);}} style={{background:"none",border:"none",color:"rgba(232,224,208,.4)",cursor:"pointer",fontSize:14,padding:"0 4px"}}>✕</button>
+          </div>
+          <div style={{display:"flex",gap:8}}>
+            <Timeline name={m.a?.name} fc={m.a?.fc} score={m.scoreA} tries={m.triesA} pens={m.pensA} cons={m.consA} tl={m.tlA}/>
+            <Timeline name={m.b?.name} fc={m.b?.fc} score={m.scoreB} tries={m.triesB} pens={m.pensB} cons={m.consB} tl={m.tlB}/>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 
 function Bracket({ ko }) {
-  // Compute R16 tops: 4 pairs, each pair has 2 matches
-  const r16Tops = [];
-  let cursor = HDR_H + 4;
-  for (let pair = 0; pair < 4; pair++) {
-    r16Tops.push(cursor);
-    r16Tops.push(cursor + MATCH_H + R16_GAP);
-    cursor += MATCH_H + R16_GAP + MATCH_H + PAIR_GAP;
+  const tops=[];
+  let cur=HDR+4;
+  for(let p=0;p<4;p++){
+    tops.push(cur);
+    tops.push(cur+MATCH_H+R16G);
+    cur+=MATCH_H+R16G+MATCH_H+PG;
   }
-
-  // QF tops: centred between each pair of R16 matches
-  const qfTops = [0,1,2,3].map(i => getCentredTop(getMid(r16Tops[i*2]), getMid(r16Tops[i*2+1])));
-
-  // SF tops: centred between each pair of QF matches
-  const sfTops = [0,1].map(i => getCentredTop(getMid(qfTops[i*2]), getMid(qfTops[i*2+1])));
-
-  // Final top: centred between both SFs
-  const finalTop = getCentredTop(getMid(sfTops[0]), getMid(sfTops[1]));
-  const bronzeTop = finalTop + MATCH_H + 20;
-
-  const totalH = Math.max(cursor + 10, bronzeTop + MATCH_H + 20);
-
-  const leftR16 = 0;
-  const leftQF  = COL_W + COL_GAP;
-  const leftSF  = leftQF + COL_W + COL_GAP;
-  const leftFin = leftSF + COL_W + COL_GAP;
-  const totalW  = leftFin + COL_W;
-
-  const headers = [
-    { label:"Round of 16", left: leftR16 },
-    { label:"Quarter-Finals", left: leftQF },
-    { label:"Semi-Finals", left: leftSF },
-    { label:"Final", left: leftFin },
-  ];
-
-  // SVG connector paths
-  const connectors = [];
-  ko.r16.forEach((_, i) => {
-    const pairIdx = Math.floor(i / 2);
-    const x1 = leftR16 + COL_W, y1 = r16Tops[i] + MATCH_H / 2;
-    const x2 = leftQF, y2 = qfTops[pairIdx] + MATCH_H / 2;
-    const xc = x1 + (x2 - x1) * 0.5;
-    connectors.push({ d:`M${x1},${y1} C${xc},${y1} ${xc},${y2} ${x2},${y2}`, color:"rgba(201,162,39,.18)", width:1.5 });
+  const qT=[0,1,2,3].map(i=>getCTop(getMid(tops[i*2]),getMid(tops[i*2+1])));
+  const sT=[0,1].map(i=>getCTop(getMid(qT[i*2]),getMid(qT[i*2+1])));
+  const fT=getCTop(getMid(sT[0]),getMid(sT[1]));
+  const bT=fT+MATCH_H+20;
+  const totalH=Math.max(cur+10,bT+MATCH_H+20);
+  const lR=0,lQ=CW+CG,lS=lQ+CW+CG,lF=lS+CW+CG,totW=lF+CW;
+  const hdrs=[["Round of 16",lR],["Quarter-Finals",lQ],["Semi-Finals",lS],["Final",lF]];
+  const connectors=[];
+  ko.r16.forEach((_,i)=>{
+    const pi=Math.floor(i/2);
+    const x1=lR+CW,y1=tops[i]+MATCH_H/2,x2=lQ,y2=qT[pi]+MATCH_H/2,xc=x1+(x2-x1)*.5;
+    connectors.push({d:`M${x1},${y1} C${xc},${y1} ${xc},${y2} ${x2},${y2}`,c:"rgba(201,162,39,.18)",w:1.5});
   });
-  ko.qf.forEach((_, i) => {
-    const pairIdx = Math.floor(i / 2);
-    const x1 = leftQF + COL_W, y1 = qfTops[i] + MATCH_H / 2;
-    const x2 = leftSF, y2 = sfTops[pairIdx] + MATCH_H / 2;
-    const xc = x1 + (x2 - x1) * 0.5;
-    connectors.push({ d:`M${x1},${y1} C${xc},${y1} ${xc},${y2} ${x2},${y2}`, color:"rgba(201,162,39,.22)", width:1.5 });
+  ko.qf.forEach((_,i)=>{
+    const pi=Math.floor(i/2);
+    const x1=lQ+CW,y1=qT[i]+MATCH_H/2,x2=lS,y2=sT[pi]+MATCH_H/2,xc=x1+(x2-x1)*.5;
+    connectors.push({d:`M${x1},${y1} C${xc},${y1} ${xc},${y2} ${x2},${y2}`,c:"rgba(201,162,39,.22)",w:1.5});
   });
-  ko.sf.forEach((_, i) => {
-    const x1 = leftSF + COL_W, y1 = sfTops[i] + MATCH_H / 2;
-    const x2 = leftFin, y2 = finalTop + MATCH_H / 2;
-    const xc = x1 + (x2 - x1) * 0.5;
-    connectors.push({ d:`M${x1},${y1} C${xc},${y1} ${xc},${y2} ${x2},${y2}`, color:"rgba(201,162,39,.3)", width:2 });
+  ko.sf.forEach((_,i)=>{
+    const x1=lS+CW,y1=sT[i]+MATCH_H/2,x2=lF,y2=fT+MATCH_H/2,xc=x1+(x2-x1)*.5;
+    connectors.push({d:`M${x1},${y1} C${xc},${y1} ${xc},${y2} ${x2},${y2}`,c:"rgba(201,162,39,.3)",w:2});
   });
 
-  return (
-    <div style={{ overflowX:"auto", paddingBottom:20 }}>
-      <div style={{ position:"relative", width:totalW, height:totalH, minWidth:totalW }}>
-
-        {/* Column headers */}
-        {headers.map(({ label, left }) => (
-          <div key={label} style={{
-            position:"absolute", top:0, left, width:COL_W,
-            fontFamily:"'Bebas Neue',sans-serif", fontSize:12, letterSpacing:1,
-            color:"rgba(232,224,208,.35)", textAlign:"center",
-            paddingBottom:5, borderBottom:"1px solid rgba(255,255,255,.07)",
-          }}>{label}</div>
+  return(
+    <div style={{overflowX:"auto",paddingBottom:20}}>
+      <div style={{position:"relative",width:totW,height:totalH+200,minWidth:totW}}>
+        {hdrs.map(([lbl,l])=>(
+          <div key={lbl} style={{position:"absolute",top:0,left:l,width:CW,fontFamily:"'Bebas Neue',sans-serif",fontSize:12,letterSpacing:1,color:"rgba(232,224,208,.35)",textAlign:"center",paddingBottom:5,borderBottom:"1px solid rgba(255,255,255,.07)"}}>{lbl}</div>
         ))}
-
-        {/* SVG connectors */}
-        <svg style={{ position:"absolute", top:0, left:0, width:totalW, height:totalH, pointerEvents:"none" }}>
-          {connectors.map((c, i) => (
-            <path key={i} d={c.d} stroke={c.color} strokeWidth={c.width} fill="none" />
-          ))}
+        <svg style={{position:"absolute",top:0,left:0,width:totW,height:totalH,pointerEvents:"none"}}>
+          {connectors.map((c,i)=><path key={i} d={c.d} stroke={c.c} strokeWidth={c.w} fill="none"/>)}
         </svg>
-
-        {/* Match cards */}
-        {ko.r16.map((m, i) => <MatchCard key={`r16-${i}`} m={m} top={r16Tops[i]} left={leftR16} label={`M${i+1}`} />)}
-        {ko.qf.map((m, i)  => <MatchCard key={`qf-${i}`}  m={m} top={qfTops[i]}  left={leftQF}  label={`QF${i+1}`} />)}
-        {ko.sf.map((m, i)  => <MatchCard key={`sf-${i}`}  m={m} top={sfTops[i]}  left={leftSF}  label={`SF${i+1}`} />)}
-        <MatchCard m={ko.final}  top={finalTop}  left={leftFin} label="🏆 The Final" gold />
-        <MatchCard m={ko.bronze} top={bronzeTop} left={leftFin} label="🥉 Bronze Final" bronze />
-
+        {ko.r16.map((m,i)=><KOCard key={`r16-${i}`} m={m} top={tops[i]} left={lR} label={`M${i+1}`}/>)}
+        {ko.qf.map((m,i)=><KOCard key={`qf-${i}`} m={m} top={qT[i]} left={lQ} label={`QF${i+1}`}/>)}
+        {ko.sf.map((m,i)=><KOCard key={`sf-${i}`} m={m} top={sT[i]} left={lS} label={`SF${i+1}`}/>)}
+        <KOCard m={ko.final} top={fT} left={lF} label="🏆 Final" gold/>
+        <KOCard m={ko.bronze} top={bT} left={lF} label="🥉 Bronze" bronze/>
       </div>
     </div>
   );
 }
 
+function WinBar({ prob }) {
+  return(
+    <div style={{display:"flex",alignItems:"center",gap:4,marginTop:3}}>
+      <div style={{flex:1,height:3,background:"rgba(255,255,255,.07)",borderRadius:2,overflow:"hidden"}}>
+        <div style={{width:fmtPct(prob),height:"100%",background:`hsl(${40+prob*80},75%,52%)`}}/>
+      </div>
+      <span style={{fontSize:10,color:"rgba(232,224,208,.4)",minWidth:28}}>{fmtPct(prob)}</span>
+    </div>
+  );
+}
+
+
+// ── App ───────────────────────────────────────────────────────────────────────
 export default function App() {
   const [tab, setTab] = useState("pools");
   const [poolData, setPoolData] = useState(null);
@@ -362,342 +556,244 @@ export default function App() {
     setTimeout(() => {
       const pd = {};
       POOL_LETTERS.forEach(l => { pd[l] = simPool(POOLS_RAW[l]); });
-
-      const winners = {}, runners = {}, thirds = {};
+      const winners={}, runners={}, thirds={};
       POOL_LETTERS.forEach(l => {
-        const s = pd[l].standings;
-        winners[l] = { ...s[0], pool: l };
-        runners[l] = { ...s[1], pool: l };
-        thirds[l]  = { ...s[2], pool: l };
+        const s=pd[l].standings;
+        winners[l]={...s[0],pool:l}; runners[l]={...s[1],pool:l}; thirds[l]={...s[2],pool:l};
       });
-
-      const allThirds = Object.values(thirds).sort((a, b) =>
-        b.pts - a.pts || (b.pf - b.pa) - (a.pf - a.pa) || b.pf - a.pf
-      );
-      const top4 = allThirds.slice(0, 4);
-      const qualPools = top4.map(t => t.pool).sort();
-      const qualMap = {};
-      top4.forEach(t => { qualMap[t.pool] = t; });
-
-      const mapping = TPT[qualPools.join("")] || ["?","?","?","?"];
-      const getThird = code => qualMap[code?.[0]] || null;
-
-      const r16 = [
-        makeKO(winners.A, getThird(mapping[0])),
-        makeKO(winners.B, getThird(mapping[1])),
-        makeKO(runners.C, runners.F),
-        makeKO(winners.E, runners.D),
-        makeKO(runners.A, runners.E),
-        makeKO(winners.F, runners.B),
-        makeKO(winners.C, getThird(mapping[2])),
-        makeKO(winners.D, getThird(mapping[3])),
+      const allThirds=Object.values(thirds).sort((a,b)=>b.pts-a.pts||(b.pf-b.pa)-(a.pf-a.pa)||b.pf-a.pf);
+      const top4=allThirds.slice(0,4);
+      const qualPools=top4.map(t=>t.pool).sort();
+      const qualMap={}; top4.forEach(t=>{qualMap[t.pool]=t;});
+      const mapping=TPT[qualPools.join("")]||["?","?","?","?"];
+      const gT=code=>qualMap[code?.[0]]||null;
+      const r16=[
+        makeKO(winners.A,gT(mapping[0])),makeKO(winners.B,gT(mapping[1])),
+        makeKO(runners.C,runners.F),makeKO(winners.E,runners.D),
+        makeKO(runners.A,runners.E),makeKO(winners.F,runners.B),
+        makeKO(winners.C,gT(mapping[2])),makeKO(winners.D,gT(mapping[3])),
       ];
-
-      const qf = [
-        makeKO(r16[0].winner, r16[1].winner),
-        makeKO(r16[2].winner, r16[3].winner),
-        makeKO(r16[4].winner, r16[5].winner),
-        makeKO(r16[6].winner, r16[7].winner),
+      const qf=[
+        makeKO(r16[0].winner,r16[1].winner),makeKO(r16[2].winner,r16[3].winner),
+        makeKO(r16[4].winner,r16[5].winner),makeKO(r16[6].winner,r16[7].winner),
       ];
-
-      const sf = [
-        makeKO(qf[0].winner, qf[1].winner),
-        makeKO(qf[2].winner, qf[3].winner),
-      ];
-
-      const bronze = makeKO(sf[0].loser, sf[1].loser);
-      const final  = makeKO(sf[0].winner, sf[1].winner);
-
-      setKo({ r16, qf, sf, bronze, final, qualPools, allThirds, top4, mapping, qualMap });
-      setPoolData(pd);
-      setSimming(false);
-      setTab("pools");
-    }, 700);
+      const sf=[makeKO(qf[0].winner,qf[1].winner),makeKO(qf[2].winner,qf[3].winner)];
+      const bronze=makeKO(sf[0].loser,sf[1].loser);
+      const final=makeKO(sf[0].winner,sf[1].winner);
+      setKo({r16,qf,sf,bronze,final,qualPools,allThirds,top4,mapping,qualMap});
+      setPoolData(pd); setSimming(false); setTab("pools");
+    }, 800);
   }
 
-  const champion = ko?.final?.winner;
+  const champion=ko?.final?.winner;
 
-  const css = `
+  const css=`
     @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&display=swap');
-    * { box-sizing:border-box; margin:0; padding:0; }
-    body { background:#0a0a0f; }
-    .app { min-height:100vh; background:#0a0a0f; color:#e8e0d0; font-family:'Barlow Condensed',sans-serif; }
-    .nav-btn { padding:7px 14px; background:transparent; border:1px solid rgba(201,162,39,.3); color:rgba(232,224,208,.5); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; cursor:pointer; transition:all .2s; }
-    .nav-btn:hover { border-color:#C9A227; color:#C9A227; }
-    .nav-btn.active { background:#C9A227; border-color:#C9A227; color:#0a0a0f; }
-    .sm-btn { padding:5px 11px; background:transparent; color:#C9A227; font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; border:1px solid rgba(201,162,39,.3); cursor:pointer; }
-    .sm-btn:hover { background:rgba(201,162,39,.07); }
-    .tbl { width:100%; border-collapse:collapse; font-size:11px; }
-    .tbl th { text-align:center; padding:3px 4px; color:rgba(232,224,208,.3); font-weight:700; font-size:9px; border-bottom:1px solid rgba(255,255,255,.08); }
-    .tbl th:nth-child(2) { text-align:left; }
-    .tbl td { padding:4px; border-bottom:1px solid rgba(255,255,255,.03); text-align:center; }
-    .tbl td:nth-child(2) { text-align:left; }
-    .tbl .qual td { color:#C9A227; }
-    .tbl .qual3 td { color:#7bc8d4; }
-    .section-hd { font-family:'Bebas Neue',sans-serif; font-size:24px; letter-spacing:2px; color:#C9A227; border-bottom:1px solid rgba(201,162,39,.2); padding-bottom:4px; margin-bottom:12px; }
-    .card { background:rgba(255,255,255,.025); border:1px solid rgba(255,255,255,.07); padding:13px; }
-    .badge { display:inline-flex; align-items:center; padding:2px 8px; background:rgba(201,162,39,.08); border:1px solid rgba(201,162,39,.2); font-size:10px; font-weight:700; letter-spacing:1px; color:#C9A227; border-radius:2px; }
-    .pool-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:11px; }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{background:#0a0a0f;}
+    .app{min-height:100vh;background:#0a0a0f;color:#e8e0d0;font-family:'Barlow Condensed',sans-serif;}
+    .nav-btn{padding:7px 14px;background:transparent;border:1px solid rgba(201,162,39,.3);color:rgba(232,224,208,.5);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all .2s;}
+    .nav-btn:hover{border-color:#C9A227;color:#C9A227;}
+    .nav-btn.active{background:#C9A227;border-color:#C9A227;color:#0a0a0f;}
+    .sm-btn{padding:5px 11px;background:transparent;color:#C9A227;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:1px solid rgba(201,162,39,.3);cursor:pointer;}
+    .sm-btn:hover{background:rgba(201,162,39,.07);}
+    .tbl{width:100%;border-collapse:collapse;font-size:11px;}
+    .tbl th{text-align:center;padding:3px 4px;color:rgba(232,224,208,.3);font-weight:700;font-size:9px;border-bottom:1px solid rgba(255,255,255,.08);}
+    .tbl th:nth-child(2){text-align:left;}
+    .tbl td{padding:4px;border-bottom:1px solid rgba(255,255,255,.03);text-align:center;}
+    .tbl td:nth-child(2){text-align:left;}
+    .tbl .qual td{color:#C9A227;}
+    .tbl .qual3 td{color:#7bc8d4;}
+    .shd{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:2px;color:#C9A227;border-bottom:1px solid rgba(201,162,39,.2);padding-bottom:4px;margin-bottom:12px;}
+    .card{background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.07);padding:13px;}
+    .badge{display:inline-flex;align-items:center;padding:2px 8px;background:rgba(201,162,39,.08);border:1px solid rgba(201,162,39,.2);font-size:10px;font-weight:700;letter-spacing:1px;color:#C9A227;border-radius:2px;}
+    .pool-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;}
   `;
 
-  return (
-    <>
-      <style>{css}</style>
-      <div className="app">
+  return(<>
+    <style>{css}</style>
+    <div className="app">
+      {/* HERO */}
+      <div style={{textAlign:"center",padding:"16px 24px 12px",background:"radial-gradient(ellipse 80% 50% at 50% 0%,rgba(180,140,40,.14) 0%,transparent 70%)"}}>
+        <div style={{fontFamily:"'Barlow Condensed',sans-serif",fontSize:10,fontWeight:700,letterSpacing:4,textTransform:"uppercase",color:"#C9A227",marginBottom:5}}>🏉 Tournament Simulator</div>
+        <div style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:"clamp(38px,8vw,70px)",lineHeight:.9,color:"#f0e6c8",textShadow:"0 0 50px rgba(201,162,39,.3)"}}>Rugby <span style={{color:"#C9A227"}}>World</span> Cup</div>
+        <div style={{display:"flex",justifyContent:"center",gap:6,marginTop:8,flexWrap:"wrap"}}>
+          <span className="badge">📊 Regression model</span>
+          <span className="badge">540 RWC matches</span>
+          <span className="badge">Score → Tries → Penalties → Timeline</span>
+        </div>
+      </div>
 
-        {/* HERO */}
-        <div style={{ textAlign:"center", padding:"16px 24px 12px", background:"radial-gradient(ellipse 80% 50% at 50% 0%, rgba(180,140,40,.14) 0%, transparent 70%)" }}>
-          <div style={{ fontFamily:"'Barlow Condensed',sans-serif", fontSize:10, fontWeight:700, letterSpacing:4, textTransform:"uppercase", color:"#C9A227", marginBottom:5 }}>🏉 Tournament Simulator</div>
-          <div style={{ fontFamily:"'Bebas Neue',sans-serif", fontSize:"clamp(38px,8vw,70px)", lineHeight:.9, color:"#f0e6c8", textShadow:"0 0 50px rgba(201,162,39,.3)" }}>
-            Rugby <span style={{ color:"#C9A227" }}>World</span> Cup
+      {!poolData ? (
+        <div style={{padding:"16px 24px"}}>
+          <div style={{background:"rgba(201,162,39,.05)",border:"1px solid rgba(201,162,39,.18)",padding:"10px 16px",marginBottom:14,fontSize:13,color:"rgba(232,224,208,.7)",lineHeight:1.7}}>
+            <div style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:17,color:"#C9A227",marginBottom:4,letterSpacing:1}}>How It Works</div>
+            Score = 48.848 + 1.053×TeamWR − 1.349×OppWR, σ=12.866. Tries sampled via NORMDIST from historical RWC data. Penalties derived from tries. Full match timeline generated. Click any match result to expand.
           </div>
-          <div style={{ display:"flex", justifyContent:"center", gap:6, marginTop:9, flexWrap:"wrap" }}>
-            <span className="badge">📊 Regression model</span>
-            <span className="badge">540 RWC matches</span>
-            <span className="badge">R²=0.56 · σ=12.8655</span>
+          <div className="pool-grid" style={{marginBottom:14}}>
+            {POOL_LETTERS.map(letter=>(
+              <div key={letter} className="card">
+                <div style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:17,letterSpacing:2,color:"#C9A227",marginBottom:9}}>Pool {letter}</div>
+                {POOLS_RAW[letter].map(team=>{
+                  const others=POOLS_RAW[letter].filter(o=>o.name!==team.name);
+                  const avgWp=others.reduce((s,o)=>s+winPct(team.rating,o.rating),0)/others.length;
+                  return(
+                    <div key={team.name} style={{padding:"5px 0",borderBottom:"1px solid rgba(255,255,255,.04)"}}>
+                      <div style={{display:"flex",alignItems:"center",gap:7,fontSize:13,fontWeight:600}}>
+                        <Flag code={team.fc} size={18}/>
+                        <span style={{flex:1}}>{team.name}</span>
+                        <span style={{fontSize:10,color:"rgba(232,224,208,.38)"}}>WR {team.rating.toFixed(1)}</span>
+                      </div>
+                      <WinBar prob={avgWp}/>
+                    </div>
+                  );
+                })}
+              </div>
+            ))}
+          </div>
+          <div style={{textAlign:"center"}}>
+            <button onClick={runSim} disabled={simming} style={{padding:"12px 34px",background:"#C9A227",color:"#0a0a0f",fontFamily:"'Bebas Neue',sans-serif",fontSize:21,letterSpacing:2,border:"none",cursor:simming?"not-allowed":"pointer",clipPath:"polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0 100%)",opacity:simming?.5:1}}>
+              {simming?"Simulating…":"▶  Simulate Tournament"}
+            </button>
           </div>
         </div>
-
-        {!poolData ? (
-          /* PRE-SIM */
-          <div style={{ padding:"16px 14px", maxWidth:"100%" }}>
-            <div style={{ background:"rgba(201,162,39,.05)", border:"1px solid rgba(201,162,39,.18)", padding:"10px 16px", marginBottom:12, lineHeight:1.7, fontSize:13, color:"rgba(232,224,208,.7)" }}>
-              <div style={{ fontFamily:"'Bebas Neue',sans-serif", fontSize:17, color:"#C9A227", marginBottom:6, letterSpacing:1 }}>How Scores Are Predicted</div>
-              Regression fitted on <strong style={{ color:"#e8e0d0" }}>540 World Cup matches (2003–2023)</strong>:&nbsp;
-              <code style={{ color:"#C9A227", fontSize:12 }}>Score = 47.104 + 1.020×TeamWR − 1.299×OppWR</code><br/>
-              Each score drawn from <strong style={{ color:"#e8e0d0" }}>Normal(predicted, σ=12.8655)</strong>.
-              Win% = 1 − NORMDIST(0, predA−predB, σ, TRUE).
-              Draws allowed in pool stage. KO scores resampled until strictly different.
+      ) : (
+        <>
+          {champion&&(
+            <div style={{textAlign:"center",padding:"14px 24px",background:"radial-gradient(ellipse 50% 70% at 50% 50%,rgba(201,162,39,.12) 0%,transparent 70%)",borderBottom:"1px solid rgba(201,162,39,.14)"}}>
+              <div style={{fontSize:10,fontWeight:700,letterSpacing:5,textTransform:"uppercase",color:"rgba(201,162,39,.5)",marginBottom:4}}>🏆 World Cup Champion</div>
+              <Flag code={champion.fc} size={48}/>
+              <div style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:"clamp(32px,6vw,56px)",color:"#C9A227",letterSpacing:4,textShadow:"0 0 30px rgba(201,162,39,.5)",marginTop:4}}>{champion.name}</div>
+              <div style={{fontSize:11,color:"rgba(232,224,208,.38)",marginTop:3}}>WR {champion.rating.toFixed(2)} · Final win prob: {fmtPct(winPct(champion.rating,ko.final[champion.name===ko.final.a.name?"b":"a"].rating))}</div>
             </div>
+          )}
+          <div style={{display:"flex",justifyContent:"center",gap:5,padding:"10px 24px",flexWrap:"wrap"}}>
+            {[["pools","Pools"],["thirds","3rd Place"],["ko","Knockout"]].map(([k,l])=>(
+              <button key={k} className={`nav-btn${tab===k?" active":""}`} onClick={()=>setTab(k)}>{l}</button>
+            ))}
+            <button className="sm-btn" style={{marginLeft:7}} onClick={()=>{setPoolData(null);setKo(null);setOpenPool({});}}>↺ Reset</button>
+            <button className="sm-btn" onClick={runSim}>⟳ Re-sim</button>
+          </div>
 
-            <div className="pool-grid" style={{ marginBottom:14 }}>
-              {POOL_LETTERS.map(letter => (
-                <div key={letter} className="card">
-                  <div style={{ fontFamily:"'Bebas Neue',sans-serif", fontSize:17, letterSpacing:2, color:"#C9A227", marginBottom:9 }}>Pool {letter}</div>
-                  {POOLS_RAW[letter].map(team => {
-                    const others = POOLS_RAW[letter].filter(o => o.name !== team.name);
-                    const avgWp = others.reduce((s, o) => s + winPct(team.rating, o.rating), 0) / others.length;
-                    return (
-                      <div key={team.name} style={{ padding:"5px 0", borderBottom:"1px solid rgba(255,255,255,.04)" }}>
-                        <div style={{ display:"flex", alignItems:"center", gap:7, fontSize:13, fontWeight:600 }}>
-                          <Flag code={team.fc} size={18} />
-                          <span style={{ flex:1 }}>{team.name}</span>
-                          <span style={{ fontSize:10, color:"rgba(232,224,208,.38)" }}>WR {team.rating.toFixed(1)}</span>
+          <div style={{padding:"0 24px 48px"}}>
+
+            {/* POOLS */}
+            {tab==="pools"&&(
+              <>
+                <div className="shd">Pool Stage</div>
+                <div className="pool-grid">
+                  {POOL_LETTERS.map(letter=>{
+                    const {standings,matches}=poolData[letter];
+                    return(
+                      <div key={letter} className="card">
+                        <div style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:17,letterSpacing:2,color:"#C9A227",marginBottom:9}}>Pool {letter}</div>
+                        <table className="tbl">
+                          <thead>
+                            <tr>
+                              <th>#</th><th>Team</th>
+                              <th title="Wins">W</th><th title="Draws">D</th><th title="Losses">L</th>
+                              <th title="Points For">PF</th><th title="Points Against">PA</th><th title="Point Difference">PD</th>
+                              <th title="Tries For">TF</th><th title="Tries Against">TA</th>
+                              <th title="Try Bonus">TB</th><th title="Losing Bonus">LB</th>
+                              <th title="Total Points">Pts</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {standings.map((team,i)=>(
+                              <tr key={team.name} className={i<2?"qual":i===2?"qual3":""}>
+                                <td><span style={{display:"inline-flex",alignItems:"center",justifyContent:"center",width:14,height:14,fontSize:9,fontWeight:700,background:"rgba(255,255,255,.06)",borderRadius:2}}>{i+1}</span></td>
+                                <td><div style={{display:"flex",alignItems:"center",gap:5}}><Flag code={team.fc} size={14}/><span>{team.name}</span></div></td>
+                                <td>{team.wins}</td><td>{team.draws}</td><td>{team.losses}</td>
+                                <td>{team.pf}</td><td>{team.pa}</td>
+                                <td>{team.pf-team.pa>0?"+":""}{team.pf-team.pa}</td>
+                                <td>{team.tf}</td><td>{team.ta}</td>
+                                <td style={{color:"#C9A227"}}>{team.tryBonus}</td>
+                                <td style={{color:"#7bc8d4"}}>{team.losingBonus}</td>
+                                <td><strong>{team.pts}</strong></td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                        <div style={{marginTop:8}}>
+                          <button className="sm-btn" style={{fontSize:9,padding:"2px 7px"}} onClick={()=>setOpenPool(p=>({...p,[letter]:!p[letter]}))}>
+                            {openPool[letter]?"▲ Hide":"▼ Show"} Results
+                          </button>
+                          {openPool[letter]&&(
+                            <div style={{marginTop:7}}>
+                              {matches.map((m,i)=><MatchRow key={i} m={m}/>)}
+                            </div>
+                          )}
                         </div>
-                        <WinBar prob={avgWp} />
                       </div>
                     );
                   })}
                 </div>
-              ))}
-            </div>
-
-            <div style={{ textAlign:"center" }}>
-              <p style={{ fontSize:12, color:"rgba(232,224,208,.45)", maxWidth:440, margin:"0 auto 16px", lineHeight:1.6 }}>
-                Win bars = avg win % vs pool opponents. Win 4pts · Draw 2pts · 4-try bonus +1 · Lose by &lt;8 +1.
-              </p>
-              <button
-                onClick={runSim}
-                disabled={simming}
-                style={{ padding:"12px 34px", background:"#C9A227", color:"#0a0a0f", fontFamily:"'Bebas Neue',sans-serif", fontSize:21, letterSpacing:2, border:"none", cursor: simming ? "not-allowed" : "pointer", clipPath:"polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0 100%)", opacity: simming ? .5 : 1 }}
-              >
-                {simming ? "Simulating…" : "▶  Simulate Tournament"}
-              </button>
-            </div>
-          </div>
-
-        ) : (
-          /* POST-SIM */
-          <>
-            {champion && (
-              <div style={{ textAlign:"center", padding:"14px 24px", background:"radial-gradient(ellipse 50% 70% at 50% 50%, rgba(201,162,39,.12) 0%, transparent 70%)", borderBottom:"1px solid rgba(201,162,39,.14)" }}>
-                <div style={{ fontSize:10, fontWeight:700, letterSpacing:5, textTransform:"uppercase", color:"rgba(201,162,39,.5)", marginBottom:4 }}>🏆 World Cup Champion</div>
-                <Flag code={champion.fc} size={48} />
-                <div style={{ fontFamily:"'Bebas Neue',sans-serif", fontSize:"clamp(32px,6vw,56px)", color:"#C9A227", letterSpacing:4, textShadow:"0 0 30px rgba(201,162,39,.5)", marginTop:4 }}>{champion.name}</div>
-                <div style={{ fontSize:11, color:"rgba(232,224,208,.38)", marginTop:3 }}>
-                  WR {champion.rating.toFixed(2)} · Final win prob: {fmtPct(winPct(champion.rating, ko.final[champion.name === ko.final.a.name ? "b" : "a"].rating))}
+                <div style={{display:"flex",gap:10,flexWrap:"wrap",fontSize:11,color:"rgba(232,224,208,.38)",marginTop:10,alignItems:"center"}}>
+                  <span style={{color:"#C9A227"}}>■</span><span>Qualified (Top 2)</span>
+                  <span style={{color:"#7bc8d4"}}>■</span><span>3rd eligible</span>
+                  <span style={{color:"#C9A227",fontWeight:700}}>TB</span><span>=Try bonus (4+ tries)</span>
+                  <span style={{color:"#7bc8d4",fontWeight:700}}>LB</span><span>=Losing bonus (lose ≤7)</span>
+                  <span style={{marginLeft:"auto"}}>Win 4pts · Draw 2pts · Click results to expand timeline</span>
                 </div>
-              </div>
+              </>
             )}
 
-            <div style={{ display:"flex", justifyContent:"center", gap:5, padding:"11px 14px", flexWrap:"wrap" }}>
-              {[["pools","Pools"],["thirds","3rd Place"],["ko","Knockout"]].map(([key, label]) => (
-                <button key={key} className={`nav-btn${tab === key ? " active" : ""}`} onClick={() => setTab(key)}>{label}</button>
-              ))}
-              <button className="sm-btn" style={{ marginLeft:7 }} onClick={() => { setPoolData(null); setKo(null); setOpenPool({}); }}>↺ Reset</button>
-              <button className="sm-btn" onClick={runSim}>⟳ Re-sim</button>
-            </div>
-
-            <div style={{ maxWidth:"100%", padding:"0 12px 48px" }}>
-
-              {/* POOLS TAB */}
-              {tab === "pools" && (
-                <>
-                  <div className="section-hd">Pool Stage</div>
-                  <div className="pool-grid">
-                    {POOL_LETTERS.map(letter => {
-                      const { standings, matches } = poolData[letter];
-                      return (
-                        <div key={letter} className="card">
-                          <div style={{ fontFamily:"'Bebas Neue',sans-serif", fontSize:17, letterSpacing:2, color:"#C9A227", marginBottom:9 }}>Pool {letter}</div>
-                          <table className="tbl">
-                            <thead>
-                              <tr>
-                                <th>#</th><th>Team</th>
-                                <th title="Wins">W</th>
-                                <th title="Draws">D</th>
-                                <th title="Losses">L</th>
-                                <th title="Points For">PF</th>
-                                <th title="Points Against">PA</th>
-                                <th title="Point Difference">PD</th>
-                                <th title="Tries For">TF</th>
-                                <th title="Tries Against">TA</th>
-                                <th title="Bonus Points">B</th>
-                                <th title="Total Points">Pts</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              {standings.map((team, i) => (
-                                <tr key={team.name} className={i < 2 ? "qual" : i === 2 ? "qual3" : ""}>
-                                  <td>
-                                    <span style={{ display:"inline-flex", alignItems:"center", justifyContent:"center", width:14, height:14, fontSize:9, fontWeight:700, background:"rgba(255,255,255,.06)", borderRadius:2 }}>{i+1}</span>
-                                  </td>
-                                  <td>
-                                    <div style={{ display:"flex", alignItems:"center", gap:5 }}>
-                                      <Flag code={team.fc} size={14} />
-                                      <span>{team.name}</span>
-                                    </div>
-                                  </td>
-                                  <td>{team.wins}</td>
-                                  <td>{team.draws}</td>
-                                  <td>{team.losses}</td>
-                                  <td>{team.pf}</td>
-                                  <td>{team.pa}</td>
-                                  <td>{team.pf - team.pa > 0 ? "+" : ""}{team.pf - team.pa}</td>
-                                  <td>{team.tf}</td>
-                                  <td>{team.ta}</td>
-                                  <td>{team.bonus}</td>
-                                  <td><strong>{team.pts}</strong></td>
-                                </tr>
-                              ))}
-                            </tbody>
-                          </table>
-                          <div style={{ marginTop:8 }}>
-                            <button className="sm-btn" style={{ fontSize:9, padding:"2px 7px" }} onClick={() => setOpenPool(prev => ({ ...prev, [letter]: !prev[letter] }))}>
-                              {openPool[letter] ? "▲ Hide" : "▼ Show"} Results
-                            </button>
-                            {openPool[letter] && (
-                              <div style={{ marginTop:7 }}>
-                                {matches.map((m, i) => (
-                                  <div key={i} style={{ marginBottom:5 }}>
-                                    <div style={{ display:"flex", alignItems:"center", padding:"4px 6px", background:"rgba(255,255,255,.018)", fontSize:11, gap:5 }}>
-                                      <Flag code={m.afC} size={14} />
-                                      <span style={{ flex:1 }}>{m.a}</span>
-                                      <span style={{ fontFamily:"'Bebas Neue',sans-serif", fontSize:14, color: m.isDraw ? "#7bc8d4" : "#C9A227", minWidth:60, textAlign:"center" }}>
-                                        {m.scoreA}–{m.scoreB}
-                                        {m.isDraw && (
-                                          <span style={{ fontFamily:"'Barlow Condensed',sans-serif", fontSize:8, fontWeight:700, color:"#7bc8d4", background:"rgba(120,180,200,.15)", border:"1px solid rgba(120,180,200,.3)", padding:"0 3px", borderRadius:2, marginLeft:3, verticalAlign:"middle" }}>DRAW</span>
-                                        )}
-                                      </span>
-                                      <span style={{ flex:1, textAlign:"right" }}>{m.b}</span>
-                                      <Flag code={m.bfC} size={14} />
-                                    </div>
-                                    <div style={{ display:"flex", alignItems:"center", padding:"2px 6px", gap:5 }}>
-                                      <div style={{ flex:1, height:2, background:"rgba(255,255,255,.05)", borderRadius:1, overflow:"hidden" }}>
-                                        <div style={{ width: fmtPct(m.wp), height:"100%", background:`hsl(${40 + m.wp*80},70%,50%)` }} />
-                                      </div>
-                                      <span style={{ fontSize:9, color:"rgba(232,224,208,.28)", minWidth:70, textAlign:"right" }}>{fmtPct(m.wp)} pre-match</span>
-                                    </div>
-                                  </div>
-                                ))}
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                  <div style={{ display:"flex", gap:10, flexWrap:"wrap", fontSize:11, color:"rgba(232,224,208,.38)", marginTop:10, alignItems:"center" }}>
-                    <span style={{ color:"#C9A227" }}>■</span><span>Qualified (Top 2)</span>
-                    <span style={{ color:"#7bc8d4" }}>■</span><span>3rd-place eligible</span>
-                    <span style={{ color:"#7bc8d4", fontWeight:700 }}>DRAW</span><span>= 2pts each</span>
-                    <span style={{ marginLeft:"auto" }}>Win 4pts · Draw 2pts · 4-try bonus +1 · Lose by &lt;8 +1</span>
-                  </div>
-                </>
-              )}
-
-              {/* THIRDS TAB */}
-              {tab === "thirds" && ko && (
-                <>
-                  <div className="section-hd">Third-Place Rankings</div>
-                  <p style={{ fontSize:13, color:"rgba(232,224,208,.5)", marginBottom:13 }}>
-                    Top 4 qualify. Permutation key: <strong style={{ color:"#C9A227" }}>{ko.qualPools.join("")}</strong>
-                  </p>
-                  <div style={{ overflowX:"auto", marginBottom:22 }}>
-                    <table className="tbl" style={{ minWidth:560 }}>
-                      <thead>
-                        <tr>
-                          <th>#</th><th>Team</th><th>Pool</th><th>WR</th>
-                          <th>W</th><th>D</th><th>L</th>
-                          <th>PF</th><th>PA</th><th>PD</th>
-                          <th>TF</th><th>TA</th><th>B</th><th>Pts</th><th></th>
+            {/* THIRDS */}
+            {tab==="thirds"&&ko&&(
+              <>
+                <div className="shd">Third-Place Rankings</div>
+                <p style={{fontSize:13,color:"rgba(232,224,208,.5)",marginBottom:13}}>Top 4 qualify. Key: <strong style={{color:"#C9A227"}}>{ko.qualPools.join("")}</strong></p>
+                <div style={{overflowX:"auto",marginBottom:22}}>
+                  <table className="tbl" style={{minWidth:600}}>
+                    <thead><tr><th>#</th><th>Team</th><th>Pool</th><th>WR</th><th>W</th><th>D</th><th>L</th><th>PF</th><th>PA</th><th>PD</th><th>TF</th><th>TA</th><th>TB</th><th>LB</th><th>Pts</th><th></th></tr></thead>
+                    <tbody>
+                      {ko.allThirds.map((team,i)=>(
+                        <tr key={team.name} style={{opacity:i>=4?.4:1}}>
+                          <td>{i+1}</td>
+                          <td><div style={{display:"flex",alignItems:"center",gap:5}}><Flag code={team.fc} size={14}/><span>{team.name}</span></div></td>
+                          <td style={{color:"#C9A227",fontWeight:700}}>Pool {team.pool}</td>
+                          <td style={{fontSize:10,color:"rgba(232,224,208,.38)"}}>{team.rating.toFixed(1)}</td>
+                          <td>{team.wins}</td><td>{team.draws}</td><td>{team.losses}</td>
+                          <td>{team.pf}</td><td>{team.pa}</td>
+                          <td>{team.pf-team.pa>0?"+":""}{team.pf-team.pa}</td>
+                          <td>{team.tf}</td><td>{team.ta}</td>
+                          <td style={{color:"#C9A227"}}>{team.tryBonus}</td>
+                          <td style={{color:"#7bc8d4"}}>{team.losingBonus}</td>
+                          <td><strong>{team.pts}</strong></td>
+                          <td style={{fontSize:10}}>{i<4?<span style={{color:"#C9A227",fontWeight:700}}>✓</span>:<span style={{color:"rgba(232,224,208,.25)"}}>–</span>}</td>
                         </tr>
-                      </thead>
-                      <tbody>
-                        {ko.allThirds.map((team, i) => (
-                          <tr key={team.name} style={{ opacity: i >= 4 ? .4 : 1 }}>
-                            <td>{i+1}</td>
-                            <td><div style={{ display:"flex", alignItems:"center", gap:5 }}><Flag code={team.fc} size={14}/><span>{team.name}</span></div></td>
-                            <td style={{ color:"#C9A227", fontWeight:700 }}>Pool {team.pool}</td>
-                            <td style={{ fontSize:10, color:"rgba(232,224,208,.38)" }}>{team.rating.toFixed(1)}</td>
-                            <td>{team.wins}</td><td>{team.draws}</td><td>{team.losses}</td>
-                            <td>{team.pf}</td><td>{team.pa}</td>
-                            <td>{team.pf - team.pa > 0 ? "+" : ""}{team.pf - team.pa}</td>
-                            <td>{team.tf}</td><td>{team.ta}</td><td>{team.bonus}</td>
-                            <td><strong>{team.pts}</strong></td>
-                            <td style={{ fontSize:10 }}>
-                              {i < 4 ? <span style={{ color:"#C9A227", fontWeight:700 }}>✓</span> : <span style={{ color:"rgba(232,224,208,.25)" }}>–</span>}
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                  <div className="section-hd" style={{ fontSize:18 }}>R16 Assignments</div>
-                  <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(185px,1fr))", gap:9, maxWidth:800 }}>
-                    {[["Winner Pool A","M1",ko.mapping[0]],["Winner Pool B","M2",ko.mapping[1]],["Winner Pool C","M7",ko.mapping[2]],["Winner Pool D","M8",ko.mapping[3]]].map(([seed, match, code]) => {
-                      const opp = ko.qualMap[code?.[0]];
-                      return (
-                        <div key={seed} className="card">
-                          <div style={{ fontSize:9, fontWeight:700, letterSpacing:1, color:"rgba(232,224,208,.28)", marginBottom:4 }}>{match}</div>
-                          <div style={{ fontSize:13, fontWeight:700, color:"#C9A227", marginBottom:2 }}>{seed}</div>
-                          <div style={{ fontSize:10, color:"rgba(232,224,208,.33)", marginBottom:5 }}>vs {code}</div>
-                          {opp
-                            ? <div style={{ display:"flex", alignItems:"center", gap:6, fontSize:13, fontWeight:700 }}><Flag code={opp.fc} size={16}/>{opp.name}</div>
-                            : <div style={{ fontSize:12, color:"rgba(232,224,208,.25)" }}>—</div>}
-                        </div>
-                      );
-                    })}
-                  </div>
-                </>
-              )}
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="shd" style={{fontSize:18}}>R16 Assignments</div>
+                <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(185px,1fr))",gap:9,maxWidth:800}}>
+                  {[["Winner Pool A","M1",ko.mapping[0]],["Winner Pool B","M2",ko.mapping[1]],["Winner Pool C","M7",ko.mapping[2]],["Winner Pool D","M8",ko.mapping[3]]].map(([seed,match,code])=>{
+                    const opp=ko.qualMap[code?.[0]];
+                    return(
+                      <div key={seed} className="card">
+                        <div style={{fontSize:9,fontWeight:700,letterSpacing:1,color:"rgba(232,224,208,.28)",marginBottom:4}}>{match}</div>
+                        <div style={{fontSize:13,fontWeight:700,color:"#C9A227",marginBottom:2}}>{seed}</div>
+                        <div style={{fontSize:10,color:"rgba(232,224,208,.33)",marginBottom:5}}>vs {code}</div>
+                        {opp?<div style={{display:"flex",alignItems:"center",gap:6,fontSize:13,fontWeight:700}}><Flag code={opp.fc} size={16}/>{opp.name}</div>:<div style={{fontSize:12,color:"rgba(232,224,208,.25)"}}>—</div>}
+                      </div>
+                    );
+                  })}
+                </div>
+              </>
+            )}
 
-              {/* KNOCKOUT TAB */}
-              {tab === "ko" && ko && (
-                <>
-                  <div className="section-hd">Knockout Stage</div>
-                  <Bracket ko={ko} />
-                  <div style={{ marginTop:12, padding:"9px 13px", background:"rgba(201,162,39,.04)", border:"1px solid rgba(201,162,39,.13)", fontSize:11, color:"rgba(232,224,208,.4)", lineHeight:1.7 }}>
-                    <strong style={{ color:"rgba(201,162,39,.65)" }}>Model:</strong> Score ~ Normal(47.104 + 1.0203×WR − 1.2994×OppWR, σ=12.8655).
-                    Win% = 1 − NORMDIST(0, predA−predB, σ, TRUE). KO scores resampled until strictly different. Fitted on 540 RWC matches 2003–2023.
-                  </div>
-                </>
-              )}
-
-            </div>
-          </>
-        )}
-      </div>
-    </>
-  );
+            {/* KNOCKOUT */}
+            {tab==="ko"&&ko&&(
+              <>
+                <div className="shd">Knockout Stage</div>
+                <p style={{fontSize:12,color:"rgba(232,224,208,.4)",marginBottom:10}}>Click any match to expand its timeline.</p>
+                <Bracket ko={ko}/>
+              </>
+            )}
+          </div>
+        </>
+      )}
+    </div>
+  </>);
 }
